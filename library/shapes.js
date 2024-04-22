@@ -5,14 +5,12 @@ class Shapes {
 
 }
 
-class Circle extends Shapes {
+class Triangle extends Shapes {
     constructor(color) {
         super(color);
-        this.radius = 80;
-        this.cx = 150;
-        this.cy = 100;
+        this.points = "150,25 50,150 250,150";
         this.render = function () {
-            return `<circle cx="${this.cx}" cy="${this.cy}" r="${this.radius}" fill="${this.color}"></circle>`;
+            return `<polygon points="${this.points}" fill="${this.color}"></polygon>`;
         }
     }
 }
@@ -30,12 +28,14 @@ class Square extends Shapes {
     }
 }
 
-class Triangle extends Shapes {
+class Circle extends Shapes {
     constructor(color) {
         super(color);
-        this.points = "150,25 50,150 250,150";
+        this.radius = 80;
+        this.cx = 150;
+        this.cy = 100;
         this.render = function () {
-            return `<polygon points="${this.points}" fill="${this.color}"></polygon>`;
+            return `<circle cx="${this.cx}" cy="${this.cy}" r="${this.radius}" fill="${this.color}"></circle>`;
         }
     }
 }
